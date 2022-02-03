@@ -6,3 +6,6 @@ dictionnaire:
 
 test:
 	pytest model/
+
+cheat:
+	python __main_cheat__.py
