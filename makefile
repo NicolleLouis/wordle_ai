@@ -1,11 +1,11 @@
 run:
-	python main.py
+	PYTHONPATH=. python main.py
 
 dictionnaire:
-	python larousse_main.py
+	PYTHONPATH=. python larousse_main.py
 
 test:
-	pytest model/
+	PYTHONPATH=. pytest model/
 
 cheat:
-	python __main_cheat__.py
+	PYTHONPATH=. python __main_cheat__.py

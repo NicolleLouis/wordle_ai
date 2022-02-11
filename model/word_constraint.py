@@ -1,5 +1,8 @@
+from service.file_service import FileService
+
+
 class WordConstraint:
-    word_length = 5
+    word_length = len(FileService.read_lines('larousse/correct_words.txt')[0])
     legal_position = range(word_length)
 
     def __init__(
@@ -93,7 +96,7 @@ class WordConstraint:
     def is_word_legal(self, word):
         if type(word) is not str:
             raise Exception(f"word should be a str: {word}")
-        if len(word) != WordConstraint.word_length:
+        if len(word) != self.word_length:
             return False
         for banned_letter in self.banned_letters:
             if banned_letter in word:
