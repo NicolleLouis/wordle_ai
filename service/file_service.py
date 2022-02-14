@@ -3,6 +3,13 @@ class FileService:
     def clean_file(file):
         open(file, 'w').close()
 
+    @staticmethod
+    def append_line_to_file(file, line):
+        file = open(file, "a")
+        file.write(line)
+        file.write("\n")
+        file.close()
+
     @classmethod
     def write_words_to_file(cls, file, words):
         cls.clean_file(file)

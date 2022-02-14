@@ -15,7 +15,8 @@ class Game:
 
         self.auto = auto
         if self.auto:
-            self.solution = self.choose_word()
+            self.solution = self.choose_random_word()
+
         self.run()
 
     def run(self):
@@ -62,10 +63,18 @@ class Game:
         return not self.is_victory
 
     def choose_word(self):
+        if self.turn_number == 0:
+            return "utile"
+        if self.turn_number == 1:
+            return "sonar"
+        return self.choose_random_word()
+
+    def choose_random_word(self):
         words = FileService.read_lines(self.current_word_file)
         return random.choice(words)
 
     def conclude(self):
         solution = FileService.read_lines(self.current_word_file)[0]
-        print(f"Solution is: {solution}")
-        print(f"Solution found in: {self.turn_number} turns")
+        if not self.auto:
+            print(f"Solution is: {solution}")
+            print(f"Solution found in: {self.turn_number} turns")

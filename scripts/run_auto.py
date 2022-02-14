@@ -1,3 +1,3 @@
-from model.game import Game
+from model.batch import Batch
 
-game = Game(auto=True)
+Batch()
