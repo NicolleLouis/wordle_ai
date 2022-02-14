@@ -235,7 +235,7 @@ accoster
 accouchement
 accoucher
 accoucheuse
-accroché
+acaoché
 accrocher
 accroissement
 accroître
@@ -5640,6 +5640,7 @@ crasseux
 cravache
 cravate
 crayon
+crawl
 créa
 créance
 créances
@@ -20165,6 +20166,7 @@ somptuosité
 son
 sonagramme
 sonate
+sonar
 sondage
 sondages
 sonde

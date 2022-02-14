@@ -1,7 +1,6 @@
 import random
 
 from model.step import Step
-from model.word_constraint import WordConstraint
 from service.file_service import FileService
 
 
@@ -11,7 +10,6 @@ class Game:
 
     def __init__(self):
         self.reset_file()
-        self.word_constraint = WordConstraint()
         self.turn_number = 0
         self.run()
 
@@ -27,12 +25,10 @@ class Game:
     def step(self):
         print("######")
         print(f"Turn number: {self.turn_number}")
-        step = Step(
-            word=self.choose_word(),
-            word_constraint=self.word_constraint,
+        Step(
+            answer=self.choose_word(),
             file=self.current_word_file,
         )
-        self.word_constraint = step.word_constraint
         remaining_words = FileService.number_of_line_in_file(self.current_word_file)
         print(f"Remaining words: {remaining_words}")
 
