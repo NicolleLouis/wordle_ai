@@ -1,8 +1,11 @@
 run:
-	PYTHONPATH=. python main.py
+	PYTHONPATH=. python scripts/run.py
+
+auto:
+	PYTHONPATH=. python scripts/run_auto.py
 
 dictionnaire:
-	PYTHONPATH=. python larousse_main.py
+	PYTHONPATH=. python scripts/dictionnaire.py
 
 cheat:
-	PYTHONPATH=. python __main_cheat__.py
+	PYTHONPATH=. python scripts/cheat.py
