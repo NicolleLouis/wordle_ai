@@ -18,6 +18,9 @@ class GenerateLarousse:
             ("ù", "u"),
             ("â", "a"),
             ("à", "a"),
+            ("ô", "o"),
+            ("ç", "c"),
+            ("œ", "oe"),
         ]
         word = word.lower()
         for replacement in replacements:
@@ -30,19 +33,19 @@ class GenerateLarousse:
         all_words_file = open(cls.all_french_word_file, encoding='latin1')
         all_words = all_words_file.read().splitlines()
         all_words_file.close()
-        good_length_letter_words = list(
-            filter(
-                lambda word: len(word) == length,
-                all_words
-            )
-        )
         cleaned_word = list(
             map(
                 lambda word: cls.clean_word(word),
-                good_length_letter_words
+                all_words
             )
         )
-        FileService.write_words_to_file(cls.correct_words_file, cleaned_word)
+        good_length_letter_words = list(
+            filter(
+                lambda word: len(word) == length,
+                cleaned_word
+            )
+        )
+        FileService.write_words_to_file(cls.correct_words_file, good_length_letter_words)
 
     @classmethod
     def remove_duplicate(cls):
